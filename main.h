@@ -3,6 +3,7 @@
 
 #include <Watchy.h>
 #include "analog_vis.h"
+#include "mickey_vis.h"
 #include "bahn_vis.h"
 #include "maze_vis.h"
 #include "redub_vis.h"
@@ -19,18 +20,20 @@ class WatchyBrain : public Watchy {
   public:
     void drawWatchFace();
     void drawWrapText(String text);
-    void drawTrain(bool light, float batt);
+    void drawClockface(bool light, float batt);
+    void drawMickey(bool light, float batt);
     void drawBahn(bool light, float batt);
     void drawMaze(bool light, float batt);
     void drawRedub(bool light, float batt);
     void drawPoeFace(bool light, float batt);
     void drawAustenFace(bool light, float batt);
     void drawSlacker(bool light, float batt);
-    void drawClockface(bool light, float batt);
+    void drawTrain(bool light, float batt);
     virtual void handleButtonPress();//Must be virtual in Watchy.h too
 };
 
 #include "analog.h"
+#include "mickey.h"
 #include "bahn.h"
 #include "maze.h"
 #include "redub.h"
@@ -44,14 +47,14 @@ void WatchyBrain::handleButtonPress() {
     uint64_t wakeupBit = esp_sleep_get_ext1_wakeup_status();
     if (wakeupBit & UP_BTN_MASK) {
       face--;
-      if (face < 0 ) { face = 7; }
+      if (face < 0 ) { face = 8; }
       RTC.read(currentTime);
       showWatchFace(true);
       return;
     }
     if (wakeupBit & DOWN_BTN_MASK) {
       face++;
-      if (face > 7 ) { face = 0; }
+      if (face > 8 ) { face = 0; }
       RTC.read(currentTime);
       showWatchFace(true);
       return;
@@ -87,24 +90,27 @@ void WatchyBrain::drawWatchFace() {
     drawClockface(light, batt);
   }
   if (face == 1) {
-    drawBahn(light, batt);  
+    drawMickey(light, batt);
   }
   if (face == 2) {
-    drawMaze(light, batt);
+    drawBahn(light, batt);  
   }
   if (face == 3) {
-    drawRedub(light, batt);
+    drawMaze(light, batt);
   }
   if (face == 4) {
-    drawPoeFace(light, batt);
+    drawRedub(light, batt);
   }
   if (face == 5) {
-    drawAustenFace(light, batt);
+    drawPoeFace(light, batt);
   }
   if (face == 6) {
-    drawSlacker(light, batt);
+    drawAustenFace(light, batt);
   }
   if (face == 7) {
+    drawSlacker(light, batt);
+  }
+  if (face == 8) {
     drawTrain(light, batt);
   }
 }

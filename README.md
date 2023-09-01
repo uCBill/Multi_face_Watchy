@@ -1,8 +1,14 @@
-# Multi_face_Watchy
+
+# Multi_face_Watchy for Watchy
 https://github.com/uCBill/Multi_face_Watchy
 Multi_face_Watchy for Watchy by Bill Eichner
 based on Brainwork for Watchy (See Below)
 https://github.com/BraininaBowl/Brainwork-for-Watchy
+
+Version 1.4.0
+Widened Minute and Hour Hand to Analog Watchface, for easier viewing. Also added light/dark mode to Analog Watchface.
+Added light/dark mode to Animated Train Watchface.
+Added modified Mickey Watchface from https://github.com/spinalcode/Mickey
 
 Version 1.3.0
 Added Analog Watchface, Animated Train Watchface and removed Brutus Watchface.

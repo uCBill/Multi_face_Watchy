@@ -1,20 +1,3 @@
-/*
-Slacker
-Version 1.2.1
-https://github.com/uCBill/Slacker
-Linux like watchface by Bill Eichner
-Daylight Savings Time is configured in the settings.h section
-
-Based on Bahn-for-Watchy
-https://github.com/BraininaBowl/Bahn-for-Watchy
-
-Based on SmatWatch
-https://github.com/theRealc2c2/SmartWatch
-
-Face for Watchy watch
-https://watchy.sqfmi.com
-*/
-
 void WatchyBrain::drawSlacker(bool light, float batt) {
       
       int16_t  x1, y1;
@@ -88,9 +71,9 @@ void WatchyBrain::drawSlacker(bool light, float batt) {
 
       //this section adds AM or PM to the display
       if (currentTime.Hour >= 12) {
-        textstring += " PM EST";//List of US Time Zones: EST, CST, MST, PST, AKST
+        textstring += " PM EDT";//List of US Time Zones: EST, CST, MST, PST, AKST
       } else {
-        textstring += " AM EST";//List of US Daylight Savings Time Zones: EDT, CDT, MDT, PDT, AKDT
+        textstring += " AM EDT";//List of US Daylight Savings Time Zones: EDT, CDT, MDT, PDT, AKDT
 	  }
    //To change Time Zones, including Daylight Savings Time, see the settings.h section
 

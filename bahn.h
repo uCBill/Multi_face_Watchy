@@ -20,9 +20,9 @@ void WatchyBrain::drawBahn(bool light, float batt) {
   //this section adds AM or PM to the display
   display.setFont(&Teko_Regular20pt7b);//from slacker_vis.h
   if (currentTime.Hour >= 12) {
-    textstring = "PM EST";//List of US Time Zones: EST, CST, MST, PST, AKST
+    textstring = "PM EDT";//List of US Time Zones: EST, CST, MST, PST, AKST
   } else {
-    textstring = " AM EST";//List of US Time Zones: EST, CST, MST, PST, AKST
+    textstring = " AM EDT";//List of US Daylight Savings Time Zones: EDT, CDT, MDT, PDT, AKDT
  }
   display.getTextBounds(textstring, 0, 0, &x1, &y1, &w, &h);
   display.setCursor(16, 75);

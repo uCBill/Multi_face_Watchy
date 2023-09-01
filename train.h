@@ -35,7 +35,7 @@ void WatchyBrain::drawTrain(bool light, float batt) {
       //draw animated image
       mn = currentTime.Minute-59;
       frame = mn*12;
-      display.drawBitmap(frame, 159, epd_bitmap_train_an, 908, 41, GxEPD_BLACK);
+      display.drawBitmap(frame, 159, epd_bitmap_train_an, 908, 41, light ? GxEPD_BLACK : GxEPD_WHITE);
       
       //draw time
       if (currentTime.Hour > 12) {
