@@ -8,7 +8,7 @@ https://github.com/BraininaBowl/Brainwork-for-Watchy
 Version 1.5.0
 Added Teko Watchface. Total of 10 Watchfaces with 9 of the Watchfaces having light/dark mode.
 
-![Screenshots] [(https://github.com/uCBill/Multi_face_Watchy/blob/main/Multi_face_Watchy.gif)]
+![Screenshots](https://github.com/uCBill/Multi_face_Watchy/blob/main/Multi_face_Watchy.gif)
 
 Version 1.4.0
 Widened Minute and Hour Hand to Analog Watchface, for easier viewing. Also added light/dark mode to Analog Watchface.
