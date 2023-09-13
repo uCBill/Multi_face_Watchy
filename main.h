@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <Watchy.h>
+#include "teko_vis.h"
 #include "analog_vis.h"
 #include "mickey_vis.h"
 #include "bahn_vis.h"
@@ -20,6 +21,7 @@ class WatchyBrain : public Watchy {
   public:
     void drawWatchFace();
     void drawWrapText(String text);
+    void drawTeko(bool light, float batt);
     void drawClockface(bool light, float batt);
     void drawMickey(bool light, float batt);
     void drawBahn(bool light, float batt);
@@ -32,6 +34,8 @@ class WatchyBrain : public Watchy {
     virtual void handleButtonPress();//Must be virtual in Watchy.h too
 };
 
+#include "teko.h"
+#//include "teko_w.h"
 #include "analog.h"
 #include "mickey.h"
 #include "bahn.h"
@@ -47,14 +51,14 @@ void WatchyBrain::handleButtonPress() {
     uint64_t wakeupBit = esp_sleep_get_ext1_wakeup_status();
     if (wakeupBit & UP_BTN_MASK) {
       face--;
-      if (face < 0 ) { face = 8; }
+      if (face < 0 ) { face = 9; }
       RTC.read(currentTime);
       showWatchFace(true);
       return;
     }
     if (wakeupBit & DOWN_BTN_MASK) {
       face++;
-      if (face > 8 ) { face = 0; }
+      if (face > 9 ) { face = 0; }
       RTC.read(currentTime);
       showWatchFace(true);
       return;
@@ -87,30 +91,33 @@ void WatchyBrain::drawWatchFace() {
   
   // ** DRAW WATCHFACE **
   if (face == 0) {
-    drawClockface(light, batt);
+    drawTeko(light, batt);
   }
   if (face == 1) {
-    drawMickey(light, batt);
+    drawClockface(light, batt);
   }
   if (face == 2) {
-    drawBahn(light, batt);  
+    drawMickey(light, batt);
   }
   if (face == 3) {
-    drawMaze(light, batt);
+    drawBahn(light, batt);  
   }
   if (face == 4) {
-    drawRedub(light, batt);
+    drawMaze(light, batt);
   }
   if (face == 5) {
-    drawPoeFace(light, batt);
+    drawRedub(light, batt);
   }
   if (face == 6) {
-    drawAustenFace(light, batt);
+    drawPoeFace(light, batt);
   }
   if (face == 7) {
-    drawSlacker(light, batt);
+    drawAustenFace(light, batt);
   }
   if (face == 8) {
+    drawSlacker(light, batt);
+  }
+  if (face == 9) {
     drawTrain(light, batt);
   }
 }

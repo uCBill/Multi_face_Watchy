@@ -17,12 +17,14 @@ Port: "/dev/ttyUSB0"
 
 //Weather Settings
 //NOAA Website for The Villages=https://forecast.weather.gov/MapClick.php?lat=28.9173&lon=-82.009#.Ygu84lROmR0
-#define CITY_ID "4173007" //Silver Springs Shores, FL https://openweathermap.org/current#cityid
-#define OPENWEATHERMAP_APIKEY "f058fe1cad2afe8e2ddc5d063a64cecb" //use your own API key :)
+//#define CITY_ID "4173007" //Silver Springs Shores, FL https://openweathermap.org/current#cityid
+//#define OPENWEATHERMAP_APIKEY "f058fe1cad2afe8e2ddc5d063a64cecb" //use your own API key :)
+#define CITY_ID "4354163" //Eldersburg, MD https://openweathermap.org/current#cityid
+#define OPENWEATHERMAP_APIKEY "1cc33c6d9e8adc550d86f65aafd1a7fd" //use your own API key :)
 #define OPENWEATHERMAP_URL "http://api.openweathermap.org/data/2.5/weather?id=" //open weather api
-#define TEMP_UNIT "metric" //metric = Celsius , imperial = Fahrenheit
+#define TEMP_UNIT "imperial" //metric = Celsius , imperial = Fahrenheit
 #define TEMP_LANG "en"
-#define WEATHER_UPDATE_INTERVAL 99 //must be greater than 5, measured in minutes
+#define WEATHER_UPDATE_INTERVAL 20 //must be greater than 5, measured in minutes
 //NTP Settings
 #define NTP_SERVER "pool.ntp.org"
 #define GMT_OFFSET_SEC 3600 * -4 //New York is UTC -5, Daylight Savings is -4

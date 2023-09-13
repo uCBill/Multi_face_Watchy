@@ -5,6 +5,9 @@ Multi_face_Watchy for Watchy by Bill Eichner
 based on Brainwork for Watchy (See Below)
 https://github.com/BraininaBowl/Brainwork-for-Watchy
 
+Version 1.5.0
+Added Teko Watchface. Total of 10 Watchfaces with 9 of the Watchfaces having light/dark mode.
+
 Version 1.4.0
 Widened Minute and Hour Hand to Analog Watchface, for easier viewing. Also added light/dark mode to Analog Watchface.
 Added light/dark mode to Animated Train Watchface.
