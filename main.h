@@ -9,6 +9,7 @@
 #include "maze_vis.h"
 #include "redub_vis.h"
 #include "novel_vis.h"
+#include "captn_vis.h"
 #include "slacker_vis.h"
 #include "train_vis.h"
 
@@ -28,20 +29,20 @@ class WatchyBrain : public Watchy {
     void drawMaze(bool light, float batt);
     void drawRedub(bool light, float batt);
     void drawPoeFace(bool light, float batt);
-    void drawAustenFace(bool light, float batt);
+    void drawCaptn(bool light, float batt);
     void drawSlacker(bool light, float batt);
     void drawTrain(bool light, float batt);
     virtual void handleButtonPress();//Must be virtual in Watchy.h too
 };
 
 #include "teko.h"
-#//include "teko_w.h"
 #include "analog.h"
 #include "mickey.h"
 #include "bahn.h"
 #include "maze.h"
 #include "redub.h"
 #include "novel.h"
+#include "captn.h"
 #include "slacker.h"
 #include "train.h"
 
@@ -112,7 +113,7 @@ void WatchyBrain::drawWatchFace() {
     drawPoeFace(light, batt);
   }
   if (face == 7) {
-    drawAustenFace(light, batt);
+    drawCaptn(light, batt);
   }
   if (face == 8) {
     drawSlacker(light, batt);

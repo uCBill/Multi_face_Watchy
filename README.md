@@ -5,10 +5,12 @@ Multi_face_Watchy for Watchy by Bill Eichner
 based on Brainwork for Watchy (See Below)
 https://github.com/BraininaBowl/Brainwork-for-Watchy
 
-Version 1.5.0
-Added Teko Watchface. Total of 10 Watchfaces with 9 of the Watchfaces having light/dark mode.
+Version 1.6.0
+Added Captn Watchface from https://github.com/b-bayport/watchy_captnwednesday
+Changed Time format from 24 Hour to 12 Hour AM/PM. Total of 10 Watchfaces with 9 of the Watchfaces having light/dark mode.
 
-![Screenshots](https://github.com/uCBill/Multi_face_Watchy/blob/main/Multi_face_Watchy.gif)
+Version 1.5.0
+Added Teko Watchface.
 
 Version 1.4.0
 Widened Minute and Hour Hand to Analog Watchface, for easier viewing. Also added light/dark mode to Analog Watchface.
@@ -26,7 +28,19 @@ Modified bahn and redub watchfaces to display time in 12 hour am/pm format
 Version 1.1.0
 Added Slacker Watchface (Linux like Display screen)
 
-A simple framework containing a handful of my watchfaces with a dark/light mode switch.
+![Screenshots](https://github.com/uCBill/Multi_face_Watchy/blob/main/Multi_face_Watchy.gif)
+
+A simple framework containing a handful of various watchfaces with a dark/light mode switch.
+
+### Setup your OPENWEATHERMAP APIKEY
+TO SUBSCRIBE FOR FREE
+1. Go to https://home.openweathermap.org/users/sign_up
+2. Add your Username and E-mail address.  Create a password and check that you are 16 years old and over.
+3. Check that you agree with Privacy Policy, Terms and conditions of sale and Websites terms and conditions of use.
+4. Receiving additional communications are optional.
+5. Once completed, you will receive an E-mail asking to sign-in, to confirm your account.
+6. You will be asked for Company and Function.  Education seemed to be the most appropriate selection.
+7. After you have signed in, go to your login menu and select My API keys to view your key.
 
 ### How to install
 

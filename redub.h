@@ -1,6 +1,5 @@
 void WatchyBrain::drawRedub(bool light, float batt) {
 
-
     // ** SETUP **
 
       int16_t  x1, y1;
@@ -8,10 +7,10 @@ void WatchyBrain::drawRedub(bool light, float batt) {
       String textstring, texthold;
       
       //drawbg
-      display.fillScreen(light ? GxEPD_BLACK : GxEPD_WHITE);
-      display.drawBitmap(0, 0, redub_background, 200, 200, light ? GxEPD_WHITE : GxEPD_BLACK);
+      display.fillScreen(light ? GxEPD_WHITE : GxEPD_BLACK);
+      display.drawBitmap(0, 0, redub_background, 200, 200, light ? GxEPD_BLACK : GxEPD_WHITE);
       
-      display.setTextColor(light ? GxEPD_BLACK : GxEPD_WHITE);
+      display.setTextColor(light ? GxEPD_WHITE : GxEPD_BLACK);
       display.setTextWrap(false);
 
       //dram am/pm
@@ -62,7 +61,7 @@ void WatchyBrain::drawRedub(bool light, float batt) {
 
       // draw battery
       if (batt > 0) {
-       display.fillRect(160,53,15*batt,6,light ? GxEPD_BLACK : GxEPD_WHITE);
+       display.fillRect(160,53,15*batt,6,light ? GxEPD_WHITE : GxEPD_BLACK);
       }   
 
 }
