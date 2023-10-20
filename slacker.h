@@ -134,7 +134,9 @@ void WatchyBrain::drawSlacker(bool light, float batt) {
       display.print("percentage:");
       display.setCursor(120, 157);
       display.print(batteryLevel); 
-      display.setCursor(143, 157);
+      textstring = batteryLevel;
+      display.getTextBounds(textstring, 0, 0, &x1, &y1, &w, &h);
+      display.setCursor(122+w, 157);
       display.print("%"); 
       display.setCursor(0, 171);
       display.print("technology:");

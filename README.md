@@ -5,6 +5,12 @@ Multi_face_Watchy for Watchy by Bill Eichner
 based on Brainwork for Watchy (See Below)
 https://github.com/BraininaBowl/Brainwork-for-Watchy
 
+Version 1.7.0
+Swapped out the Maze Watchface and replaced it with a Calendar Watchface.  
+The Calendar Watchface will display a Monthy calendar for the current Month and Year for years from 2020 to 2040.
+The Calendar supports the light/dark mode.
+Also adjusted percentage "%" symbol position on the Slacker Watchface.
+
 Version 1.6.0
 Added Captn Watchface from https://github.com/b-bayport/watchy_captnwednesday
 Changed Time format from 24 Hour to 12 Hour AM/PM. Total of 10 Watchfaces with 9 of the Watchfaces having light/dark mode.

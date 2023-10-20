@@ -6,7 +6,7 @@
 #include "analog_vis.h"
 #include "mickey_vis.h"
 #include "bahn_vis.h"
-#include "maze_vis.h"
+#include "calendar_vis.h"
 #include "redub_vis.h"
 #include "novel_vis.h"
 #include "captn_vis.h"
@@ -26,7 +26,7 @@ class WatchyBrain : public Watchy {
     void drawClockface(bool light, float batt);
     void drawMickey(bool light, float batt);
     void drawBahn(bool light, float batt);
-    void drawMaze(bool light, float batt);
+    void drawCalendar(bool light, float batt);
     void drawRedub(bool light, float batt);
     void drawPoeFace(bool light, float batt);
     void drawCaptn(bool light, float batt);
@@ -39,7 +39,7 @@ class WatchyBrain : public Watchy {
 #include "analog.h"
 #include "mickey.h"
 #include "bahn.h"
-#include "maze.h"
+#include "calendar.h"
 #include "redub.h"
 #include "novel.h"
 #include "captn.h"
@@ -104,7 +104,7 @@ void WatchyBrain::drawWatchFace() {
     drawBahn(light, batt);  
   }
   if (face == 4) {
-    drawMaze(light, batt);
+    drawCalendar(light, batt);
   }
   if (face == 5) {
     drawRedub(light, batt);
