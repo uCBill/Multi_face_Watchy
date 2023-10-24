@@ -9,6 +9,9 @@ void WatchyBrain::drawCalendar(bool light, float batt) {
     int mth;
     int yr;
     int days;
+    int wkday;
+    int x;
+    int y;
 
     // draw background
     display.fillScreen(light ? GxEPD_WHITE : GxEPD_BLACK);
@@ -859,6 +862,167 @@ void WatchyBrain::drawCalendar(bool light, float batt) {
     display.print(textstring);
     // END draw calendar
 
+    // highlight calendar day
+        textstring = dayShortStr(currentTime.Wday);
+        if (textstring == "Sun") {
+        wkday = 1;
+        }
+        else if (textstring == "Mon") {
+        wkday = 2;
+        }
+        else if (textstring == "Tue") {
+        wkday = 3;
+        }
+        else if (textstring == "Wed") {
+        wkday = 4;
+        }
+        else if (textstring == "Thu") {
+        wkday = 5;
+        }
+        else if (textstring == "Fri") {
+        wkday = 6;
+        }
+        else if (textstring == "Sat") {
+        wkday = 7;
+        }
+
+        days = currentTime.Day;
+        y = 56;//R1
+        if (wkday <= 1) {
+        x = -1;//Sun
+        if (days <= 1) {
+        y += 0;//R1
+        }
+        else if (days <= 8) {
+        y += 28;//R2
+        }
+        else if (days <= 15) {
+        y += 56;//R3
+        }
+        else if (days <= 22) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        else if (wkday <= 2) {
+        x = 27;//Mon
+        if (days <= 2) {
+        y += 0;
+        }
+        else if (days <= 9) {
+        y += 28;//R2
+        }
+        else if (days <= 16) {
+        y += 56;//R3
+        }
+        else if (days <= 23) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        else if (wkday <= 3) {
+        x = 55;//Tue
+        if (days <= 3) {
+        y += 0;
+        }
+        else if (days <= 10) {
+        y += 28;//R2
+        }
+        else if (days <= 17) {
+        y += 56;//R3
+        }
+        else if (days <= 24) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        else if (wkday <= 4) {
+        x = 83;//Wed
+        if (days <= 4) {
+        y += 0;
+        }
+        else if (days <= 11) {
+        y += 28;//R2
+        }
+        else if (days <= 18) {
+        y += 56;//R3
+        }
+        else if (days <= 25) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        else if (wkday <= 5) {
+        x = 112;//Thu
+        y += 0;//R2
+        if (days <= 5) {
+        y += 0;
+        }
+        else if (days <= 12) {
+        y += 28;//R2
+        }
+        else if (days <= 19) {
+        y += 56;//R3
+        }
+        else if (days <= 26) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        else if (wkday <= 6) {
+        x = 140;//Fri
+        if (days <= 6) {
+        y += 0;
+        }
+        else if (days <= 13) {
+        y += 28;//R2
+        }
+        else if (days <= 20) {
+        y += 56;//R3
+        }
+        else if (days <= 27) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        else if (wkday <= 7) {
+        x = 168;//Sat
+        if (days <= 7) {
+        y += 0;
+        }
+        else if (days <= 14) {
+        y += 28;//R2
+        }
+        else if (days <= 21) {
+        y += 56;//R3
+        }
+        else if (days <= 28) {
+        y += 84;//R4
+        }
+        else if (days <= 31) {
+        y += 112;//R5
+        }
+        }
+        
+        //draw day hightlight image
+        if (wkday == 4) {
+        display.drawBitmap(x,y, block35x34, 35, 34, GxEPD_BLACK);
+        }
+        display.drawBitmap(x,y, block34x34, 35, 34, GxEPD_BLACK);
+        //END highlight calendar day
+  
     // draw time
   display.setFont(&Teko_Regular12pt7b);
   int displayHour;

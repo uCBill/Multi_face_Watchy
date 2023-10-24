@@ -5,6 +5,9 @@ Multi_face_Watchy for Watchy by Bill Eichner
 based on Brainwork for Watchy (See Below)
 https://github.com/BraininaBowl/Brainwork-for-Watchy
 
+Version 1.7.1
+Added Highlighted Calendar Day on the Calendar Watchface.
+
 Version 1.7.0
 Swapped out the Maze Watchface and replaced it with a Calendar Watchface.  
 The Calendar Watchface will display a Monthy calendar for the current Month and Year for years from 2020 to 2040.
